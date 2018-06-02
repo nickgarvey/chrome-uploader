@@ -175,6 +175,7 @@ export class App extends Component {
       });
     }
     if (this.props.location.pathname === pagesMap.LOGIN) {
+      /*
       template.push({
         label: 'Change server',
         submenu: [
@@ -210,6 +211,7 @@ export class App extends Component {
           }
         ]
       });
+      */
       template.push({
         label: 'Upload Data',
         submenu: [
