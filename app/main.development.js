@@ -342,9 +342,11 @@ app.on('ready', async () => {
 function checkUpdates(){
   // in production NODE_ENV we check for updates, but not if NODE_ENV is 'development'
   // this prevents a Webpack build error that masks other build errors during local development
+  /*
   if (process.env.NODE_ENV === 'production') {
     autoUpdater.checkForUpdates();
   }
+  */
 }
 
 setInterval(checkUpdates, 1000 * 60 * 60 * 24);
