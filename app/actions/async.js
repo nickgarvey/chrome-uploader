@@ -88,7 +88,14 @@ export function doAppInit(opts, servicesToInit) {
             dispatch(syncActions.setNewPatientUrl(api.makeBlipUrl(paths.NEW_PATIENT)));
             let session = apiResult;
             if (session === undefined) {
-              dispatch(setPage(pages.LOGIN));
+              if (opts.USERNAME && opts.PASSWORD) {
+                dispatch(doLogin(
+                  {username: opts.USERNAME, password: opts.PASSWORD},
+                  {remember: true}
+                ));
+              } else {
+                dispatch(setPage(pages.LOGIN));
+              }
               dispatch(syncActions.initSuccess());
               return dispatch(doVersionCheck());
             }
