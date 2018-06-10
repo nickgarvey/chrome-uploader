@@ -236,6 +236,14 @@ export function setAllUsers(user, profile, memberships){
   };
 }
 
+export function setAutoUploadDevice(device){
+  return {
+    type: actionTypes.SET_AUTO_UPLOAD_DEVICE,
+    payload: { autoUploadDevice: device },
+    meta: {source: actionSources[actionTypes.SET_AUTO_UPLOAD_DEVICE]}
+  };
+}
+
 /*
  * relating to async action creator doAppInit
  */

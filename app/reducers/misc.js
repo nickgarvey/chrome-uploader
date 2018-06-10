@@ -274,6 +274,15 @@ export function driverUpdateComplete(state = null, action) {
   }
 }
 
+export function autoUploadDevice(state = null, action) {
+  switch (action.type) {
+    case actionTypes.SET_AUTO_UPLOAD_DEVICE:
+      return action.payload.autoUploadDevice;
+    default:
+      return state;
+  }
+}
+
 export function showingDeviceTimePrompt(state = null, action) {
   switch (action.type) {
     case actionTypes.DEVICE_TIME_INCORRECT:
