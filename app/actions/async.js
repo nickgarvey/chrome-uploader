@@ -60,6 +60,7 @@ export function doAppInit(opts, servicesToInit) {
 
     dispatch(syncActions.initRequest());
     dispatch(syncActions.hideUnavailableDevices(opts.os || hostMap[os.platform()]));
+    dispatch(syncActions.setAutoUploadDevice(opts.AUTO_UPLOAD_DEVICE));
 
     log('Initializing local store.');
     localStore.init(localStore.getInitialState(), function(localStoreResult){

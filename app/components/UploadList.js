@@ -44,7 +44,8 @@ export default class UploadList extends Component {
     isClinicAccount: PropTypes.bool.isRequired,
     onChooseDevices: PropTypes.func.isRequired,
     timezoneIsSelected: PropTypes.bool.isRequired,
-    isUploadInProgress: PropTypes.bool.isRequired
+    isUploadInProgress: PropTypes.bool.isRequired,
+    doAutoUpload: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -57,6 +58,10 @@ export default class UploadList extends Component {
 
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+      this.props.doAutoUpload();
   }
 
   render() {

@@ -118,3 +118,6 @@ export const CREATE_CUSTODIAL_ACCOUNT_FAILURE = USER_VISIBLE;
 
 // application update
 export const QUIT_AND_INSTALL = UNDER_THE_HOOD;
+
+// auto upload
+export const SET_AUTO_UPLOAD_DEVICE = UNDER_THE_HOOD;

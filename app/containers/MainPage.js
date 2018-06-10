@@ -174,7 +174,13 @@ export class MainPage extends Component {
           toggleErrorDetails={this.props.sync.toggleErrorDetails}
           updateProfileErrorMessage={this.props.updateProfileErrorMessage}
           uploads={this.props.activeUploads}
-          userDropdownShowing={this.props.showingUserSelectionDropdown} />
+          userDropdownShowing={this.props.showingUserSelectionDropdown}
+          doAutoUpload={() => {
+            if (this.props.autoUploadDevice)
+              this.props.async.doUpload(this.props.autoUploadDevice, {});
+            }
+          }
+          />
         {viewDataLinkButton}
       </div>
     );
@@ -243,6 +249,7 @@ export default connect(
       uploadIsInProgress: state.working.uploading,
       uploadTargetUser: state.uploadTargetUser,
       uploadsByUser: state.uploadsByUser,
+      autoUploadDevice: state.autoUploadDevice,
     };
   },
   (dispatch) => {
