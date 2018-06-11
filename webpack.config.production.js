@@ -188,11 +188,11 @@ export default merge(baseConfig, {
   }),
 
   /** Upload sourcemap to Rollbar */
-  new RollbarSourceMapPlugin({
+  ROLLBAR_POST_TOKEN ? new RollbarSourceMapPlugin({
     accessToken: ROLLBAR_POST_TOKEN,
     version: VERSION_SHA,
     publicPath: 'http://dynamichost/dist'
-  })],
+  }) : false].filter(Boolean),
 
   // https://github.com/chentsulin/webpack-target-electron-renderer#how-this-module-works
   target: 'electron-renderer',
